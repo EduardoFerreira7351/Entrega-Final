@@ -1,0 +1,15 @@
+dotnet new sln -n FastPoint
+dotnet new webapi -o src/FastPoint.API
+dotnet new classlib -o src/FastPoint.Application
+dotnet new classlib -o src/FastPoint.Domain
+dotnet new classlib -o src/FastPoint.Infrastructure
+dotnet new xunit -o tests/FastPoint.Tests.Unit
+dotnet new xunit -o tests/FastPoint.Tests.Integration
+
+# adicionar projetos à solução
+dotnet sln FastPoint.sln add src/FastPoint.Domain/FastPoint.Domain.csproj
+dotnet sln FastPoint.sln add src/FastPoint.Application/FastPoint.Application.csproj
+dotnet sln FastPoint.sln add src/FastPoint.Infrastructure/FastPoint.Infrastructure.csproj
+dotnet sln FastPoint.sln add src/FastPoint.API/FastPoint.API.csproj
+dotnet sln FastPoint.sln add tests/FastPoint.Tests.Unit/FastPoint.Tests.Unit.csproj
+dotnet sln FastPoint.sln add tests/FastPoint.Tests.Integration/FastPoint.Tests.Integration.csproj
